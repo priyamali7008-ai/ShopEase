@@ -11,7 +11,7 @@ async function loadProducts() {
     try {
 
         const response = await fetch(
-            "http://localhost:5000/api/products"
+            "https://shopease-1-zse9.onrender.com/api/products"
         );
 
         if (!response.ok) {
