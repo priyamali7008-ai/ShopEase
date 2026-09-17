@@ -1,29 +1,19 @@
 let cart =
     JSON.parse(localStorage.getItem("cart")) || [];
 
+
+// Add product to cart
 function addToCart(productId) {
+
     const product = products.find(
         product => String(product.id) === String(productId)
     );
 
     if (!product) {
-        console.error("Product not found:", productId);
-        return;
-    }
-
-    cart.push(product);
-
-    localStorage.setItem(
-        "cart",
-        JSON.stringify(cart)
-    );
-
-    alert(`${product.name} added to cart!`);
-
-    displayCart();
-}
-
-    if (!product) {
+        console.error(
+            "Product not found:",
+            productId
+        );
         return;
     }
 
@@ -38,8 +28,11 @@ function addToCart(productId) {
         `${product.name} added to cart!`
     );
 
+    displayCart();
+}
 
 
+// Remove product from cart
 function removeFromCart(index) {
 
     cart.splice(index, 1);
@@ -51,10 +44,17 @@ function removeFromCart(index) {
 
     displayCart();
 }
+
+
+// Display cart
 function displayCart() {
 
     const container =
         document.getElementById("cart-container");
+
+    if (!container) {
+        return;
+    }
 
     container.innerHTML = "";
 
@@ -86,4 +86,6 @@ function displayCart() {
     });
 }
 
+
+// Show cart when page loads
 displayCart();
