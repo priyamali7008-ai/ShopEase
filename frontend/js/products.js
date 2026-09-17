@@ -22,11 +22,12 @@ async function loadProducts() {
 
         }
 
-        const apiProducts =
-            await response.json();
+       const apiProducts = await response.json();
 
-        // Store API products in the products variable
-        products = apiProducts;
+products = apiProducts.map(product => ({
+    ...product,
+    id: product._id
+}));
 
         console.log(
             "Products received from API:",
