@@ -1,13 +1,27 @@
 let cart =
     JSON.parse(localStorage.getItem("cart")) || [];
 
-
 function addToCart(productId) {
+    const product = products.find(
+        product => String(product.id) === String(productId)
+    );
 
-    const product =
-        products.find(
-            product => product.id === productId
-        );
+    if (!product) {
+        console.error("Product not found:", productId);
+        return;
+    }
+
+    cart.push(product);
+
+    localStorage.setItem(
+        "cart",
+        JSON.stringify(cart)
+    );
+
+    alert(`${product.name} added to cart!`);
+
+    displayCart();
+}
 
     if (!product) {
         return;
@@ -23,7 +37,7 @@ function addToCart(productId) {
     alert(
         `${product.name} added to cart!`
     );
-}
+
 
 
 function removeFromCart(index) {
