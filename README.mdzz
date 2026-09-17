@@ -1,0 +1,61 @@
+# ShopEase – E-Commerce Product Catalog
+
+ShopEase is a full-stack e-commerce product catalog web application developed using HTML, CSS, JavaScript, Node.js, Express.js and MongoDB.
+
+## Features
+
+- Responsive e-commerce interface
+- Product catalog
+- Products loaded from MongoDB
+- Search and category filtering
+- Shopping cart
+- Client-side navigation
+- REST API
+- Responsive design
+- Deployed frontend and backend
+
+## Technologies Used
+
+### Frontend
+- HTML5
+- CSS3
+- JavaScript
+
+### Backend
+- Node.js
+- Express.js
+- REST API
+
+### Database
+- MongoDB Atlas
+
+### Deployment
+- Vercel
+- Render
+
+## Project Structure
+
+ShopEase/
+├── frontend/
+│   ├── css/
+│   ├── images/
+│   ├── js/
+│   └── index.html
+│
+├── backend/
+│   ├── controllers/
+│   ├── models/
+│   ├── routes/
+│   └── server.js
+│
+└── README.md
+
+## Live Demo
+https://shop-ease-opal-one.vercel.app/
+
+## Backend API
+https://shopease-1-zse9.onrender.com/api/products
+
+## Author
+
+Priya Mali
