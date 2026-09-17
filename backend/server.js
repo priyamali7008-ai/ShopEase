@@ -22,8 +22,23 @@ app.use(express.json());
 // ===============================
 
 mongoose.connect(process.env.MONGODB_URI)
-    .then(() => {
+    .then(async () => {
         console.log("MongoDB Connected Successfully");
+
+        console.log(
+            "Database Name:",
+            mongoose.connection.name
+        );
+
+        const Product = require("./models/productModel");
+
+        const productCount =
+            await Product.countDocuments();
+
+        console.log(
+            "Product Count:",
+            productCount
+        );
     })
     .catch((error) => {
         console.error(
@@ -31,7 +46,6 @@ mongoose.connect(process.env.MONGODB_URI)
             error.message
         );
     });
-
 
 // ===============================
 // Product Routes
